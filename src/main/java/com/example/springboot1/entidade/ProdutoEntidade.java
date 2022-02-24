@@ -18,5 +18,8 @@ public class ProdutoEntidade {
         this.setValor(produtoDTO.getValor());
     }
 
+    public ProdutoEntidade() {
+    }
+
 
 }

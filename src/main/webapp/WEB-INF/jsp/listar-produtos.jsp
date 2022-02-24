@@ -1,8 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.example.springboot1.modelo.Produto" %>
 <%@ page import="java.util.Calendar" %>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -14,7 +11,7 @@
     <title>Lista de pessoas</title>
 </head>
 <body>
-<h2> ${ titulo } <fmt:formatDate pattern="dd/MM/yyyy" value="<%= Calendar.getInstance().getTime() %>"/></h2>
+<h2><fmt:formatDate pattern="dd/MM/yyyy" value="<%= Calendar.getInstance().getTime() %>"/></h2>
 
 <table width="500" border="1px">
     <tr>

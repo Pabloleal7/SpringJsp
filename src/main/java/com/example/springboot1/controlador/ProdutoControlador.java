@@ -19,21 +19,29 @@ public class ProdutoControlador {
         return "produto-form";
     }
 
+    @GetMapping("/listar")
+    public String listar() {
+
+        return "listar-produtos";
+
+    }
+
 
     @PostMapping("/cadastrar-produto")
     public RedirectView cadastrarProduto(ProdutoDTO produtoDTO, RedirectAttributes redirectAttributes) {
-
+        System.out.println("Atributo Recebido" + produtoDTO);
+//a
         ProdutosRepositorio repositorio = new ProdutosRepositorio();
+
         ProdutoEntidade produtoEntidade = new ProdutoEntidade(produtoDTO);
 
         ProdutoEntidade entidadeSalva = repositorio.salvar(produtoEntidade);
 
+        //  model.addAttribute("produtos", repositorio.obterTodos());
 
-      //  model.addAttribute("produtos", repositorio.obterTodos());
         redirectAttributes.addFlashAttribute("produtos", repositorio.obterTodos());
 
-        RedirectView redirectView = new RedirectView("/produtos/listar",true);
-
+        RedirectView redirectView = new RedirectView("/produtos/listar", true);
 
         return redirectView;
     }

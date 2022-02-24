@@ -11,7 +11,7 @@
 </head>
 <body>
 <fieldset> <legend>Formulário de cadastro de produtos</legend>
-    <form action="/produto-app/controladora?acao=cadastrar-produto" method="post">
+    <form action="/app/produtos/cadastrar-produto" method="post">
         <input type="hidden" name="id" value="${produto.id}"/>
         <label>Nome</label> <input type="nome" name="nome" value="${produto.nome}"/>
         <label>Descrição</label> <input type="descricao" name="descricao" value="${produto.descricao}"/>
